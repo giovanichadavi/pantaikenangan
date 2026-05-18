@@ -1,579 +1,381 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pantai Kenangan - Coastal Living</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <title>Pantai Kenangan | Luxury Coastal Living & Residences</title>
+    
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22>🏢</text></svg>">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Plus Jakarta Sans', 'sans-serif'],
+                        'serif': ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        'estate-dark': '#0f172a',
+                        'estate-blue': '#0ea5e9',
+                    }
+                }
+            }
+        }
+    </script>
+
     <style>
-        :root {
-            --primary-color: #f7f3f0; /* Soft cream background */
-            --accent-color-dark: #3a4750; /* Deep blue-grey */
-            --accent-color-light: #5e6f82; /* Lighter blue-grey */
-            --coffee-color: #8b7d72; /* Warm coffee brown */
-            --text-color: #333333;
-            --white: #ffffff;
-            --black: #000000;
-        }
-
         body {
-            margin: 0;
-            font-family: 'Montserrat', sans-serif;
-            background-color: var(--primary-color);
-            color: var(--text-color);
-            scroll-behavior: smooth;
+            background: linear-gradient(to bottom, #0f172a, #1e293b, #0f172a);
         }
-
-        h1, h2, h3, h4 {
+        .bg-cyber-card {
+            background-color: rgba(30, 41, 59, 0.7);
+            border: 1px solid rgba(14, 165, 233, 0.2);
+            backdrop-filter: blur(12px);
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #0ea5e9, #22c55e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        /* Style Spesial untuk Font Pantai Kenangan i (Gaya Italic Serif Mewah) */
+        .brand-font {
             font-family: 'Playfair Display', serif;
-            margin: 0;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-            transition: color 0.3s;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* --- Header --- */
-        header {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 100;
-            padding: 20px 0;
-        }
-
-        header .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 28px;
-            font-weight: 700;
-            color: var(--black);
-        }
-
-        .logo span {
-            color: var(--accent-color-dark);
-        }
-
-        nav ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            gap: 30px;
-        }
-
-        nav a {
-            font-weight: 600;
-            color: var(--text-color);
-            font-size: 15px;
-        }
-
-        nav a:hover {
-            color: var(--accent-color-light);
-        }
-
-        .header-cta {
-            background-color: var(--accent-color-dark);
-            color: var(--white);
-            padding: 10px 25px;
-            border-radius: 30px;
-            font-weight: 700;
-            font-size: 14px;
-        }
-
-        /* --- Hero --- */
-        .hero {
-            height: 100vh;
-            background-image: url('https://images.unsplash.com/photo-1590439162985-78e7235a909a?q=80&w=2671&auto=format&fit=crop'); /* Replace with actual beachfront view */
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            position: relative;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(180deg, rgba(247, 243, 240, 0) 0%, rgba(247, 243, 240, 0.8) 100%);
-            z-index: 1;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 600px;
-        }
-
-        .hero h1 {
-            font-size: 60px;
-            font-weight: 700;
-            line-height: 1.1;
-            margin-bottom: 20px;
-        }
-
-        .hero p {
-            font-size: 18px;
-            line-height: 1.6;
-            margin-bottom: 40px;
-            color: var(--accent-color-light);
-        }
-
-        .hero .hero-cta {
-            background-color: var(--black);
-            color: var(--white);
-            padding: 15px 40px;
-            border-radius: 40px;
-            font-weight: 700;
-            display: inline-block;
-        }
-
-        /* --- Bento Grid Showcase --- */
-        .grid-showcase {
-            padding: 100px 0;
-        }
-
-        .grid-showcase h2 {
-            font-size: 40px;
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .bento-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: repeat(2, 300px);
-            gap: 20px;
-        }
-
-        .bento-tile {
-            background-color: var(--white);
-            border-radius: 20px;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            position: relative;
-            transition: transform 0.3s;
-        }
-
-        .bento-tile:hover {
-            transform: translateY(-5px);
-        }
-
-        .tile-image {
-            height: 70%;
-            background-size: cover;
-            background-position: center;
-        }
-
-        .tile-content {
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            height: 30%;
-        }
-
-        .tile-content h3 {
-            font-size: 18px;
-            margin-bottom: 5px;
-        }
-
-        .tile-content p {
-            font-size: 14px;
-            color: var(--accent-color-light);
-            margin: 0;
-        }
-
-        .tile-cta {
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
-            background-color: var(--accent-color-dark);
-            color: var(--white);
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-weight: 700;
-            font-size: 12px;
-        }
-
-        /* Specific tile styling */
-        .tile-1 { grid-column: span 2; grid-row: span 2; height: 100%; }
-        .tile-1 .tile-image { height: 80%; }
-        .tile-1 .tile-content { height: 20%; padding: 30px; }
-        .tile-1 h3 { font-size: 26px; }
-
-        .tile-2 { grid-column: 3; }
-        .tile-3 { grid-column: 4; }
-        .tile-4 { grid-column: 3; }
-        .tile-5 { grid-column: 4; }
-
-        .tile-cta { display: none; }
-        .tile-1 .tile-cta { display: block; }
-        .tile-4 .tile-cta { display: block; background-color: var(--coffee-color); }
-
-        .rating-badge {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            background-color: var(--white);
-            color: var(--black);
-            padding: 5px 10px;
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            font-weight: 600;
-            font-size: 14px;
-        }
-
-        /* --- Amenities / Icon Section --- */
-        .amenities {
-            padding: 100px 0;
-            background-color: var(--white);
-            text-align: center;
-        }
-
-        .amenities h2 {
-            font-size: 40px;
-            margin-bottom: 60px;
-        }
-
-        .amenities-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 40px;
-        }
-
-        .amenity-tile {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .amenity-icon {
-            font-size: 40px;
-            color: var(--accent-color-dark);
-        }
-
-        .amenity-tile h4 {
-            font-size: 20px;
-        }
-
-        .amenity-tile p {
-            font-size: 15px;
-            color: var(--accent-color-light);
-            margin: 0;
-        }
-
-        /* Placeholder icons */
-        .icon-beach::before { content: "\26F1"; } /* Parasol */
-        .icon-pool::before { content: "\1F3CA"; } /* Swimmer */
-        .icon-garden::before { content: "\1F33F"; } /* Herb */
-        .icon-home::before { content: "\1F3E0"; } /* House */
-
-        .section-cta {
-            display: inline-block;
-            margin-top: 60px;
-            background-color: var(--accent-color-dark);
-            color: var(--white);
-            padding: 12px 30px;
-            border-radius: 30px;
-            font-weight: 700;
-            font-size: 14px;
-        }
-
-        /* --- Testimonial / Customers Section --- */
-        .customers {
-            padding: 100px 0;
-        }
-
-        .customers h2 {
-            font-size: 40px;
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .testimonial-tile {
-            background-color: var(--white);
-            border-radius: 20px;
-            padding: 40px;
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            align-items: center;
-            gap: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-        }
-
-        .profile-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2671&auto=format&fit=crop'); /* Placeholder image of a person */
-            background-size: cover;
-            background-position: center;
-            border: 5px solid var(--accent-color-dark);
-        }
-
-        .testimonial-content {
             font-style: italic;
-            font-size: 18px;
-            color: var(--accent-color-light);
-            line-height: 1.6;
+            font-weight: 900;
         }
-
-        /* --- Book a Tour / Final Section --- */
-        .book-tour {
-            padding: 100px 0;
-            background-color: var(--primary-color);
-            position: relative;
+        .btn-animate {
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
-
-        .book-tour-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            align-items: center;
-            gap: 60px;
+        .btn-animate:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(14, 165, 233, 0.3);
         }
-
-        .tour-image {
-            height: 400px;
-            background-image: url('https://images.unsplash.com/photo-1613498382159-0972b7b4c9f1?q=80&w=2671&auto=format&fit=crop'); /* Modern home interior view */
-            background-size: cover;
-            background-position: center;
-            border-radius: 20px;
+        nav.scrolled {
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(14, 165, 233, 0.1);
         }
-
-        .tour-text-cta h2 {
-            font-size: 40px;
-            margin-bottom: 20px;
-        }
-
-        .tour-text-cta p {
-            font-size: 16px;
-            line-height: 1.6;
-            margin-bottom: 30px;
-            color: var(--accent-color-light);
-        }
-
-        .tour-button {
-            background-color: var(--black);
-            color: var(--white);
-            padding: 15px 40px;
-            border-radius: 40px;
-            font-weight: 700;
-            display: inline-block;
-            margin-right: 20px;
-        }
-
-        .qr-section {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-top: 30px;
-        }
-
-        .qr-code {
-            width: 60px;
-            height: 60px;
-            background-image: url('https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://theperfecthome.com/kenangan-tour'); /* Real QR to actual page */
-            background-size: cover;
-            padding: 5px;
-            background-color: var(--white);
-            border-radius: 5px;
-        }
-
-        .qr-text {
-            font-size: 14px;
-            font-weight: 600;
-            color: var(--black);
-        }
-
-        /* --- Map --- */
-        .map {
-            width: 100%;
-            height: 300px;
-            background-color: #e0e0e0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #888;
-            font-weight: 600;
-            margin-top: 60px;
-        }
-
-        /* --- Footer --- */
-        footer {
-            padding: 40px 0;
-            text-align: center;
-            font-size: 14px;
-            color: #aaa;
-        }
-
     </style>
 </head>
-<body>
+<body class="font-sans text-slate-100 antialiased pt-24 min-h-screen flex flex-col justify-between">
 
-    <header>
-        <div class="container">
-            <a href="#" class="logo">P<span>A</span>NTAI K<span>E</span>NANGAN</a>
-            <nav>
-                <ul>
-                    <li><a href="#hero">Explore</a></li>
-                    <li><a href="#amenities">Fitur</a></li>
-                    <li><a href="#showcase">Properti</a></li>
-                    <li><a href="#contact">Kontak</a></li>
-                </ul>
-            </nav>
-            <a href="#book-tour" class="header-cta">Book a Tour</a>
+    <nav id="main-nav" class="fixed top-0 w-full z-50 transition-all duration-300 py-5 px-6 md:px-12 flex justify-between items-center bg-transparent">
+        <div class="brand-font text-2xl md:text-3xl tracking-tight flex items-center gap-2 select-none gradient-text">
+            Pantai Kenangan.
         </div>
-    </header>
-
-    <section class="hero" id="hero">
-        <div class="container hero-content">
-            <h1>Coast and Comfort Converge</h1>
-            <p>Welcome to Pantai Kenangan, where the ocean's whisper harmonizes with the artistry of unique architecture. We craft exceptional seaside homes in the heart of Indonesia.</p>
-            <a href="#showcase" class="hero-cta">Explore Our Homes</a>
+        
+        <div class="hidden md:flex gap-8 items-center text-xs font-bold uppercase tracking-wider text-slate-300">
+            <a href="#home" class="hover:text-estate-blue transition">Home</a>
+            <a href="#about" class="hover:text-estate-blue transition">Filosofi</a>
+            <a href="#bento-showcase" class="hover:text-estate-blue transition">Apartemen & Rumah</a>
+            <a href="#features" class="hover:text-estate-blue transition">Fitur Utama</a>
+            <a href="#order-tour" class="btn-animate bg-estate-blue text-white px-5 py-2.5 rounded-full hover:bg-sky-500 transition shadow-md font-bold active:scale-95 duration-100">Book a Tour</a>
         </div>
-    </section>
+        
+        <button class="md:hidden text-xl text-estate-blue p-2" id="hamburger-btn">
+            <i class="fas fa-bars-staggered" id="menu-icon"></i>
+        </button>
+    </nav>
 
-    <section class="customers">
-        <div class="container">
-            <div class="testimonial-tile">
-                <div class="tour-image" style="background-image: url('https://images.unsplash.com/photo-1497604402443-759830c4fc3c?w=2671&auto=format&fit=crop');"></div> <div class="testimonial-content tour-text-cta" style="font-style: normal; text-align: left;">
-                    <h2 style="font-size: 32px; font-weight: 600;">The Ideal Blend of Nature & Luxury</h2>
-                    <p>Pantai Kenangan is more than a residence; it's a coastal vision. Combining unique architectural designs with the serenity of the beach, we provide a lifestyle defined by breathtaking ocean views and modern, ergonomic comfort.</p>
-                    <p style="font-weight: 600;">Apartments and houses available.</p>
+    <div id="mobile-menu" class="fixed top-0 left-0 w-full h-screen bg-slate-900 z-40 transform translate-x-full flex flex-col justify-center items-center gap-6 text-center shadow-2xl md:hidden">
+        <a href="#home" class="mobile-link font-serif text-2xl font-bold py-2">Home</a>
+        <a href="#about" class="mobile-link font-serif text-2xl font-bold py-2">Filosofi</a>
+        <a href="#bento-showcase" class="mobile-link font-serif text-2xl font-bold py-2">Apartemen & Rumah</a>
+        <a href="#features" class="mobile-link font-serif text-2xl font-bold py-2">Fitur Utama</a>
+        <a href="#order-tour" class="mobile-link mt-4 bg-estate-blue text-white px-8 py-3 rounded-full font-bold">Book a Tour</a>
+    </div>
+
+    <main class="w-full max-w-7xl mx-auto px-4 md:px-6 space-y-16 mb-16">
+        
+        <section id="home" class="grid grid-cols-1 lg:grid-cols-12 gap-4">
+            
+            <div class="lg:col-span-7 bg-cyber-card rounded-[2rem] p-8 md:p-12 relative overflow-hidden flex flex-col justify-between min-h-[550px] shadow-sm" data-aos="fade-right" data-aos-duration="1000">
+                <div class="max-w-md my-auto relative z-10">
+                    <div class="flex items-center gap-2 mb-4 bg-slate-800/80 border border-estate-blue/30 px-3 py-1 rounded-full w-fit">
+                        <span class="text-xs font-bold uppercase tracking-widest text-estate-blue">
+                            💎 Premium Coastal Project 2026
+                        </span>
+                    </div>
+                    
+                    <h1 class="font-serif text-4xl md:text-6xl font-black leading-[1.1] mb-6 text-white">
+                        Coast and <br>Comfort <br><span class="gradient-text brand-font">Converge.</span>
+                    </h1>
+                    <p class="text-sm text-slate-400 leading-relaxed mb-8">
+                        Selamat datang di Pantai Kenangan. Menghadirkan simfoni keindahan alam pesisir pantai berpadu mahakarya arsitektur ergonomis untuk kenyamanan masa depan Anda.
+                    </p>
+                    <div class="flex flex-wrap gap-4 py-2">
+                        <a href="#bento-showcase" class="btn-animate bg-estate-blue text-white px-6 py-3.5 rounded-full text-center font-bold hover:bg-sky-500 active:scale-95 duration-100">Lihat Unit Properti</a>
+                        <a href="#about" class="btn-animate bg-transparent border-2 border-slate-700 hover:bg-slate-800/50 text-slate-300 font-bold text-xs uppercase tracking-wider px-6 py-3.5 rounded-full text-center">Pelajari Filosofi</a>
+                    </div>
+                </div>
+
+                <div class="absolute right-4 bottom-8 w-1/2 hidden md:flex flex-col items-end pointer-events-none" data-aos="zoom-in-left" data-aos-delay="500">
+                    <div class="backdrop-blur-md p-4 rounded-2xl shadow-md border border-estate-blue/20 mb-6 mr-6 max-w-[180px] bg-slate-900/80">
+                        <div class="flex text-amber-400 text-xs mb-1"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="text-[11px] font-bold text-slate-300 leading-tight">4.9/5 Indeks Kepuasan Investor Hunian.</p>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=500&q=80" class="w-48 h-48 rounded-full object-cover border-4 border-slate-800 shadow-xl rotate-12 mb-4 border-estate-blue/30" alt="Apartment Building View">
                 </div>
             </div>
-        </div>
-    </section>
 
-    <section class="grid-showcase" id="showcase">
-        <div class="container">
-            <h2>The Best Coast for Best Memories</h2>
-            <div class="bento-grid">
-                
-                <div class="bento-tile tile-1">
-                    <div class="rating-badge">4.9 ⭐</div>
-                    <div class="tile-image" style="background-image: url('https://images.unsplash.com/photo-1596464522851-f7678f2d5740?w=2671&auto=format&fit=crop');"></div> <div class="tile-content">
-                        <h3>Beachfront Villa</h3>
-                        <p>Our premier single-family home right on the sand.</p>
+            <div id="order-tour" class="lg:col-span-5 bg-cyber-card rounded-[2rem] p-8 relative overflow-hidden min-h-[550px] lg:min-h-full flex flex-col justify-between shadow-sm" data-aos="fade-left" data-aos-duration="1000">
+                <div class="max-w-xs relative z-10 w-full h-full flex flex-col justify-between">
+                    <div>
+                        <h2 class="font-serif text-3xl font-bold mb-3 text-white">Order Your <br>Private Tour</h2>
+                        <p class="text-xs text-slate-400 leading-relaxed mb-6">Jadwalkan kunjungan langsung atau virtual ke kavling perumahan dan unit kondominium Pantai Kenangan bersama konsultan ahli kami tanpa antre.</p>
+                        <button class="btn-animate bg-estate-blue text-white px-5 py-2.5 rounded-full font-bold hover:bg-sky-500 active:scale-95 duration-100">Order Kunjungan</button>
+                    </div>
+                    
+                    <div class="flex flex-col items-center justify-center gap-4 bg-black/40 p-6 rounded-2xl border border-slate-700/50 w-full max-w-[260px] min-h-[200px] text-center mt-6 mr-auto z-10 group select-none">
+                        <div class="overflow-hidden rounded-xl flex-shrink-0 bg-white p-2 shadow-md">
+                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://pantaikenangan.com" alt="QR Code" class="w-24 h-24 md:w-32 md:h-32 object-contain transform group-hover:scale-110 transition-transform duration-300">
+                        </div>
+                        <p class="font-serif font-black italic text-slate-300 tracking-wide text-xs">Scan for Check All Menu</p>
                     </div>
                 </div>
                 
-                <div class="bento-tile tile-2">
-                    <div class="tile-image" style="background-image: url('https://images.unsplash.com/photo-1549416878-b9ca95e26903?w=2671&auto=format&fit=crop');"></div> <div class="tile-content">
-                        <h3>Oceanview Apt.</h3>
-                        <p>Panoramic views with modern luxury.</p>
-                    </div>
-                </div>
-                
-                <div class="bento-tile tile-3">
-                    <div class="tile-image" style="background-image: url('https://images.unsplash.com/photo-1620023641216-9b5bd4e2970a?w=2671&auto=format&fit=crop');"></div> <div class="tile-content">
-                        <h3>Coastal Cottage</h3>
-                        <p>Quaint and close to nature.</p>
-                    </div>
-                </div>
-
-                <div class="bento-tile tile-4">
-                    <a href="#showcase" class="tile-cta">Lihat All Menu</a>
-                    <div class="tile-image" style="background-image: url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=2671&auto=format&fit=crop');"></div> <div class="tile-content">
-                        <h3>Unique Architecture</h3>
-                        <p>From design to blueprints, we are ergonomics-focused.</p>
-                    </div>
-                </div>
-
-                <div class="bento-tile tile-5">
-                    <div class="tile-image" style="background-image: url('https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=2671&auto=format&fit=crop');"></div> <div class="tile-content">
-                        <p style="font-weight: 600; color: var(--accent-color-dark);">ROOMTOUR</p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <section class="amenities" id="amenities">
-        <div class="container">
-            <h2>Explore Our Alowishus</h2>
-            <div class="amenities-grid">
-                
-                <div class="amenity-tile">
-                    <div class="amenity-icon icon-beach"></div>
-                    <h4>Private Beach</h4>
-                    <p>Direct, exclusive access to the serene coast.</p>
-                </div>
-                
-                <div class="amenity-tile">
-                    <div class="amenity-icon icon-pool"></div>
-                    <h4>Infinity Pool</h4>
-                    <p>Dive into panoramic ocean views from our signature club.</p>
-                </div>
-                
-                <div class="amenity-tile">
-                    <div class="amenity-icon icon-garden"></div>
-                    <h4>Coastal Gardens</h4>
-                    <p>Stroll through curated tropical, seaside landscapes.</p>
-                </div>
-
-                <div class="amenity-tile">
-                    <div class="amenity-icon icon-home"></div>
-                    <h4>Smart Homes</h4>
-                    <p>Our units come integrated with standard home automation.</p>
-                </div>
-
-            </div>
-            <a href="#" class="section-cta">LEARN MORE AMENITIES</a>
-        </div>
-    </section>
-
-    <section class="book-tour" id="book-tour">
-        <div class="container book-tour-content">
-            <div class="tour-text-cta" id="contact">
-                <h2>Order Your Private Tour</h2>
-                <p>Book a private viewing of your future coastal retreat. Scan the QR code or click the button to schedule a personalized tour with our advisors.</p>
-                <div class="cta-row">
-                    <a href="#book-tour" class="tour-button">Download App</a>
-                    <a href="#showcase" class="tour-button" style="background-color: var(--accent-color-light);">SHOP HOME</a>
-                </div>
-                <div class="qr-section">
-                    <div class="qr-code"></div>
-                    <p class="qr-text">Scan for Check All Menu</p>
+                <div class="absolute -right-10 -bottom-10 w-48 h-48 opacity-20 pointer-events-none hidden sm:block" data-aos="zoom-in" data-aos-delay="400">
+                    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover rounded-full rotate-[15deg] border-4 border-slate-700 shadow-lg" alt="Luxury House">
                 </div>
             </div>
-            <div class="tour-image"></div> </div>
-    </section>
+        </section>
 
-    <section class="map">
-        <div class="container">
-           
+        <section id="about" class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+            <div class="lg:col-span-5 h-[350px] lg:h-[450px] rounded-[2rem] overflow-hidden shadow-sm relative border-4 border-slate-800" data-aos="fade-right" data-aos-duration="1000">
+                <img src="https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover" alt="Beautiful Coastal Nature View">
+                <div class="absolute inset-0 bg-black/30"></div>
+            </div>
+            
+            <div class="lg:col-span-7 bg-cyber-card rounded-[2rem] p-8 md:p-12 flex flex-col justify-center min-h-[350px] lg:min-h-[450px] shadow-sm" data-aos="fade-left" data-aos-duration="1000">
+                <h3 class="font-serif text-3xl md:text-4xl font-black mb-4 text-white">The Ideal Blend of <br><span class="gradient-text brand-font">Nature & Luxury.</span></h3>
+                <p class="text-sm text-slate-400 leading-relaxed mb-6">
+                    Pantai Kenangan bukan sekadar tempat tinggal biasa; ini adalah visi kawasan terpadu masa kini. Kami mengintegrasikan tata ruang apartemen bertingkat tinggi yang efisien serta kompleks perumahan kluster eksklusif, berdiri selaras dengan alam pesisir untuk menciptakan ekosistem hidup yang seimbang.
+                </p>
+                <div class="grid grid-cols-2 gap-4 border-t border-slate-700/60 pt-6">
+                    <div>
+                        <h5 class="font-bold text-sm mb-1 text-white"><i class="fas fa-compass mr-2 text-estate-blue"></i> Zona Strategis</h5>
+                        <p class="text-xs text-slate-400">Akses langsung jalan poros utama kota dan bebas hambatan menuju bandara.</p>
+                    </div>
+                    <div>
+                        <h5 class="font-bold text-sm mb-1 text-white"><i class="fas fa-seedling mr-2 text-emerald-500"></i> Green Building</h5>
+                        <p class="text-xs text-slate-400">Arsitektur ramah energi dengan sirkulasi udara alami laut optimal.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="bento-showcase" class="bg-cyber-card rounded-[2rem] p-8 md:p-12 shadow-sm" data-aos="fade-up" data-aos-duration="1000">
+            <div class="mb-8 max-w-xl" data-aos="fade-right" data-aos-delay="200">
+                <h3 class="font-serif text-3xl font-bold mb-2 text-white">The Best Coast for Best Memories</h3>
+                <p class="text-sm text-slate-400">Pilihan master-unit properti terbaik yang dirancang eksklusif oleh arsitek lanskap internasional kami.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                
+                <div class="p-4 rounded-3xl border border-slate-700/60 flex flex-col justify-between shadow-sm hover:shadow-md transition bg-slate-900/40 group">
+                    <div class="rounded-2xl overflow-hidden h-44 mb-4 border border-slate-800">
+                        <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 group-hover:rotate-1" alt="Oceanview Luxury Apartment Building">
+                    </div>
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl flex items-center justify-center font-bold text-sm bg-slate-800 border border-estate-blue/30 text-estate-blue"><i class="fas fa-building text-lg"></i></div>
+                            <div>
+                                <h4 class="font-bold text-sm text-white">Oceanview Apartment</h4>
+                                <span class="text-[9px] uppercase font-bold text-sky-400 bg-sky-500/10 px-2 py-0.5 rounded-md mt-1 inline-block tracking-wider">Premium Suite</span>
+                            </div>
+                        </div>
+                        <span class="font-mono font-bold text-sm gradient-text">Mulai 850Jt</span>
+                    </div>
+                    <button class="w-full bg-slate-800 hover:bg-amber-800 text-white px-2.5 py-2.5 rounded-full text-xs font-bold transition-colors duration-300 btn-animate active:scale-95 duration-100">Beli Sekarang</button>
+                </div>
+                
+                <div class="p-4 rounded-3xl border border-slate-700/60 flex flex-col justify-between shadow-sm hover:shadow-md transition bg-slate-900/40 group">
+                    <div class="rounded-2xl overflow-hidden h-44 mb-4 border border-slate-800">
+                        <img src="https://images.unsplash.com/photo-1613498382159-0972b7b4c9f1?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 group-hover:rotate-1" alt="Modern Beachfront House Villa">
+                    </div>
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl flex items-center justify-center font-bold text-sm bg-slate-800 border border-emerald-500/30 text-emerald-400"><i class="fas fa-home text-lg"></i></div>
+                            <div>
+                                <h4 class="font-bold text-sm text-white">Coastal Cottage Villa</h4>
+                                <span class="text-[9px] uppercase font-bold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-md mt-1 inline-block tracking-wider">Kluster Eksklusif</span>
+                            </div>
+                        </div>
+                        <span class="font-mono font-bold text-sm gradient-text">Mulai 1.8M</span>
+                    </div>
+                    <button class="w-full bg-slate-800 hover:bg-amber-800 text-white px-2.5 py-2.5 rounded-full text-xs font-bold transition-colors duration-300 btn-animate active:scale-95 duration-100">Beli Sekarang</button>
+                </div>
+                
+                <div class="p-4 rounded-3xl border border-slate-700/60 flex flex-col justify-between shadow-sm hover:shadow-md transition bg-slate-900/40 group">
+                    <div class="rounded-2xl overflow-hidden h-44 mb-4 border border-slate-800">
+                        <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 group-hover:rotate-1" alt="Luxury Penthouse Room Interior">
+                    </div>
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl flex items-center justify-center font-bold text-sm bg-slate-800 border border-purple-500/30 text-purple-400"><i class="fas fa-couch text-lg"></i></div>
+                            <div>
+                                <h4 class="font-bold text-sm text-white">Roomtour Preview</h4>
+                                <span class="text-[9px] uppercase font-bold text-purple-400 bg-purple-500/10 px-2 py-0.5 rounded-md mt-1 inline-block tracking-wider">Ergonomic Design</span>
+                            </div>
+                        </div>
+                        <span class="font-mono font-bold text-sm text-slate-400">Full Furnished</span>
+                    </div>
+                    <a href="#order-tour" class="w-full bg-estate-blue hover:bg-amber-800 text-white text-center px-2.5 py-2.5 rounded-full text-xs font-bold transition-colors duration-300 btn-animate active:scale-95 duration-100 block">Lihat All Menu Detail</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="bg-cyber-card rounded-[2rem] p-8 md:p-12 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8 shadow-sm" data-aos="fade-up" data-aos-duration="1000">
+            <div class="max-w-md" data-aos="fade-right" data-aos-delay="200">
+                <h3 class="font-serif text-3xl font-bold mb-3 text-white">Explore Our Alowishus</h3>
+                <p class="text-sm text-slate-400 leading-relaxed">Nikmati integrasi fasilitas resor bintang lima yang dirancang melekat di area pekarangan rumah and gedung apartemen Anda.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 w-full lg:w-auto flex-grow max-w-2xl">
+                <div class="p-5 rounded-3xl border border-slate-700/50 text-center bg-slate-900/50 group">
+                    <div class="text-2xl mb-2 text-estate-blue"><i class="fas fa-umbrella-beach"></i></div>
+                    <h4 class="font-bold text-sm mb-4 text-slate-300 group-hover:text-white transition-colors duration-300">Private Beach</h4>
+                    <button class="bg-slate-800 text-slate-300 hover:bg-amber-800 transition-colors duration-300 px-4 py-2 rounded-full text-xs font-bold btn-animate active:scale-95 duration-100">Pesan Catering Akses</button>
+                </div>
+                <div class="p-5 rounded-3xl border border-slate-700/50 text-center bg-slate-900/50 group">
+                    <div class="text-2xl mb-2 text-estate-blue"><i class="fas fa-swimming-pool"></i></div>
+                    <h4 class="font-bold text-sm mb-4 text-slate-300 group-hover:text-white transition-colors duration-300">Infinity Pool</h4>
+                    <button class="bg-slate-800 text-slate-300 hover:bg-amber-800 transition-colors duration-300 px-4 py-2 rounded-full text-xs font-bold btn-animate active:scale-95 duration-100">Menu Makanan Club</button>
+                </div>
+                <div class="p-5 rounded-3xl border border-slate-700/50 text-center bg-slate-900/50 group">
+                    <div class="text-2xl mb-2 text-estate-blue"><i class="fas fa-bolt"></i></div>
+                    <h4 class="font-bold text-sm mb-4 text-slate-300 group-hover:text-white transition-colors duration-300">Smart Home IoT</h4>
+                    <button class="bg-slate-800 text-slate-300 hover:bg-amber-800 transition-colors duration-300 px-4 py-2 rounded-full text-xs font-bold btn-animate active:scale-95 duration-100">Temukan Rasa Nyaman</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-cyber-card rounded-[2rem] p-8 md:p-12 relative overflow-hidden flex flex-col sm:flex-row justify-between items-center gap-6 shadow-sm" data-aos="fade-up" data-aos-duration="1000">
+            <div class="max-w-md text-center sm:text-left" data-aos="fade-right" data-aos-delay="200">
+                <h3 class="font-serif text-2xl font-bold mb-2 text-white">Instant Coffee At Your Home</h3>
+                <p class="text-xs text-slate-400 leading-relaxed mb-6">Unduh aplikasi mobile resmi Pantai Kenangan Smart Estate untuk mengatur tagihan, keamanan perimeter, hingga booking gazebo pantai secara instan lewat genggaman.</p>
+                <button class="bg-slate-800 text-slate-200 px-5 py-3.5 rounded-full inline-flex items-center gap-2 font-bold transition transform active:scale-95 hover:bg-amber-800 transition-colors duration-300 shadow-md">
+                    <i class="fab fa-google-play"></i> App Store & Play Store
+                </button>
+            </div>
+            
+            <div class="text-right flex items-center gap-6 select-none bg-black/40 p-5 rounded-2xl border border-slate-700/60" data-aos="fade-left" data-aos-delay="400">
+                 <div class="flex flex-col items-center gap-2 group">
+                    <div class="overflow-hidden rounded-lg bg-white p-1.5 shadow-md">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://pantaikenangan.com/ios" alt="App Store QR" class="w-24 h-24 md:w-28 md:h-28 object-contain transform group-hover:scale-110 transition-transform duration-300">
+                    </div>
+                    <p class="font-serif font-black italic text-slate-300 tracking-wide text-[11px]">App Store</p>
+                </div>
+                 <div class="flex flex-col items-center gap-2 group">
+                    <div class="overflow-hidden rounded-lg bg-white p-1.5 shadow-md">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://pantaikenangan.com/android" alt="Play Store QR" class="w-24 h-24 md:w-28 md:h-28 object-contain transform group-hover:scale-110 transition-transform duration-300">
+                    </div>
+                    <p class="font-serif font-black italic text-slate-300 tracking-wide text-[11px]">Play Store</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="w-full bg-slate-950 pt-16 pb-8 px-6 md:px-12 border-t border-slate-800 text-slate-400">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 mb-12 text-sm">
+            
+            <div class="space-y-4">
+                <div class="brand-font text-2xl tracking-tight flex items-center gap-2 text-white gradient-text">
+                    Pantai Kenangan.
+                </div>
+                <p class="text-xs leading-relaxed">
+                    Menyajikan esensi hunian masa depan terbaik di sepanjang garis pesisir nusantara yang megah.
+                </p>
+                <div class="flex gap-4 text-base text-slate-500 pt-2">
+                    <a href="#" class="hover:text-white transition"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="hover:text-white transition"><i class="fab fa-tiktok"></i></a>
+                    <a href="#" class="hover:text-white transition"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold text-xs uppercase tracking-wider mb-4">Navigasi Kafe</h4>
+                <div class="flex flex-col gap-2.5 text-xs">
+                    <a href="#home" class="hover:text-white transition">Home</a>
+                    <a href="#about" class="hover:text-white transition">Explore Services</a>
+                    <a href="#bento-showcase" class="hover:text-white transition">Menu Unggulan Properti</a>
+                    <a href="#features" class="hover:text-white transition">Filosofi Ruang</a>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold text-xs uppercase tracking-wider mb-4">Jam Layanan Galeri</h4>
+                <div class="flex flex-col gap-2 text-xs text-slate-500">
+                    <p><span class="font-semibold block text-slate-300">Senin - Jumat</span> 09.00 AM - 05.00 PM</p>
+                    <p><span class="font-semibold block text-slate-300">Sabtu - Minggu</span> 10.00 AM - 04.00 PM</p>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold text-xs uppercase tracking-wider mb-4">Kontak & Rumah</h4>
+                <div class="flex flex-col gap-2 text-xs text-slate-500 leading-relaxed">
+                    <p><i class="fas fa-map-marker-alt text-estate-blue mr-1.5"></i> Kavling Boulevard Pantai No. 1, Teluk Kenangan, Indonesia.</p>
+                    <p><i class="fas fa-envelope text-estate-blue mr-1.5"></i> info@pantaikenangan.com</p>
+                </div>
+            </div>
+
         </div>
-    </section>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Pantai Kenangan. All rights reserved.</p>
+        <div class="max-w-7xl mx-auto border-t border-slate-800 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs font-medium">
+            <p>© 2026 PANTAI KENANGAN RESIDENCES. ALL RIGHTS RESERVED.</p>
+            <div class="flex gap-6">
+                <a href="#" class="hover:text-white transition">Privacy Policy</a>
+                <a href="#" class="hover:text-white transition">Terms of Service</a>
+            </div>
         </div>
     </footer>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 120
+        });
+
+        const mainNav = document.getElementById('main-nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 40) {
+                mainNav.classList.add('scrolled', 'shadow-sm');
+                mainNav.classList.remove('py-5');
+                mainNav.classList.add('py-3.5');
+            } else {
+                mainNav.classList.remove('scrolled', 'shadow-sm');
+                mainNav.classList.add('py-5');
+                mainNav.classList.remove('py-3.5');
+            }
+        });
+
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        hamburgerBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('translate-x-full');
+            const isMenuOpen = !mobileMenu.classList.contains('translate-x-full');
+            menuIcon.className = isMenuOpen ? "fas fa-times text-estate-blue" : "fas fa-bars-staggered text-estate-blue";
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('translate-x-full');
+                menuIcon.className = "fas fa-bars-staggered text-estate-blue";
+            });
+        });
+    </script>
 </body>
 </html>
